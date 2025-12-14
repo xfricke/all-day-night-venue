@@ -1,16 +1,6 @@
 <template>
-    <section class="section origin">
+    <section class="section origin" :style="bgStyle" style="margin-top: 100px; margin-bottom: 20px;">
       <div class="container origin-wrap card">
-  
-        <!-- Image on top -->
-        <figure class="origin-media">
-          <img
-            src="@/assets/coffee.JPG"
-            alt="Seven Seeds banner"
-            loading="lazy"
-          />
-        </figure>
-  
         <!-- Text below -->
         <div class="origin-copy">
           <p class="eyebrow">Our Coffee</p>
@@ -24,44 +14,41 @@
             Whether you're here for a morning batch brew or a late-afternoon flat white,
             you're sipping on some of Melbourne's finest.
           </p>
-        </div>
-    
-        <div class="seedsLogo">
+
+          <div class="seedsLogo">
             <img src="@/assets/sevenseeds.png"></img>
         </div>
+
+        </div>
+    
+       
       </div>
     </section>
   </template>
   
   <script setup>
-  // no script needed for now
+ import bg from '@/assets/coffee.JPG'
+const bgStyle = {
+  backgroundImage: `url(${bg})`,
+}
   </script>
   
   <style scoped>
+  .origin{
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  
   .origin-wrap {
     text-align: center;
-    padding: 32px 24px;
+    padding: 52px 400px;
     border-radius: 16px;
     color: bisque;
   }
+
+
   
-  /* Image container */
-  .origin-media {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    margin: 0 0 24px 0;
-  }
-  
-  .origin-media img {
-    width: 100%;
-    max-width: 480px;        /* caps size on large monitors */
-    max-height: 340px;       /* prevents it from becoming too tall */
-    object-fit: cover;
-    border-radius: 16px;
-    border: 1px solid rgba(255,255,255,0.08);
-    box-shadow: 0 6px 20px rgba(0,0,0,0.25);
-  }
   
   /* Text styling */
   .eyebrow {
@@ -72,6 +59,34 @@
     font-size: 0.85rem;
   }
   
+  .origin-copy{
+    background-color: rgb(45, 43, 32);
+    padding: 30px 20px;
+    border-radius: 5px;
+    border-style: solid;
+    border-color: bisque;
+  }
+
+  @media (max-width: 1200px) {
+    .origin-wrap {
+        padding: 52px 150px;
+    }
+    
+  }
+
+  @media (max-width: 700px) {
+    .origin-wrap {
+        padding: 52px 50px;
+    }
+  }
+
+  @media (max-width: 400px){
+    .seedsLogo img{
+        width: 100px;
+        height: 100px;
+    }
+  }
+
   .origin-copy h2 {
     margin: 0 0 12px;
     font-size: clamp(28px, 4vw, 40px);
@@ -99,12 +114,5 @@
     height: 200px;
   }
   
-  /* Responsive: everything stacks naturally since image is on top */
-  @media (max-width: 900px) {
-    .origin-media img {
-      max-width: 100%;
-      max-height: 300px;
-    }
-  }
   </style>
   

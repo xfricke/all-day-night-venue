@@ -2,12 +2,10 @@
     <section class="section collab">
       <div class="container collab-grid card">
         <!-- Brand / Visual -->
-        <figure class="collab-media" v-if="banner">
+        <div class="collab-media" v-if="banner">
           <img :src="banner" alt="OutOfOffice collaboration banner" loading="lazy" />
-        </figure>
-        <div class="collab-media placeholder" v-else>
-          <div class="badge">OutOfOffice</div>
         </div>
+       
   
         <!-- Copy -->
         <div class="collab-copy">
@@ -155,11 +153,6 @@
     list-style: none;
 }
 
-/* Placeholder block matches sizing */
-.collab-media.placeholder {
-  display: grid;
-  place-items: center;
-}
 
 /* Little brand badge example */
 .badge {
@@ -171,6 +164,11 @@
   letter-spacing: .4px;
 }
 
+@media (max-width: 1300px) {
+  .collab-media{
+    max-width: 450px;
+  }
+}
 /* Mobile: stack columns */
 @media (max-width: 900px) {
   .collab-grid {
@@ -180,8 +178,12 @@
 
   .collab-copy{
     padding: 10px;          
-
   }
+
+  .collab-media{
+    max-width: 400px;
+  }
+
 }
 
   .eyebrow{
@@ -233,7 +235,7 @@
   grid-template-columns: 1fr 1fr;
   gap: 2px;
   align-items: center;
-  margin-bottom: 28px;
+  margin-bottom: 0px;
 }
 
 /* Reverse order row (Image right / Text left) */
@@ -247,9 +249,7 @@
 /* Media (images) */
 .media {
   margin: 0;
-  border-radius: 16px;
   overflow: hidden;
-  border: 1px solid rgba(255,255,255,0.1);
   background: rgba(255,255,255,0.04);
 }
 

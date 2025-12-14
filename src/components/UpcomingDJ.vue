@@ -36,7 +36,6 @@
     meta?: string     
     desc?: string
     photo?: string
-    socials?: string
   }
   const props = withDefaults(defineProps<Props>(), {
     name: 'Hasthika',
@@ -44,7 +43,6 @@
     desc:
       'Smooth and lustful R&B played by yours truly, Hasthika. ',
     photo: hasthiPhoto,
-    socials: '@ooodanceclub'
   })
   
   const { name, meta, desc, photo } = props

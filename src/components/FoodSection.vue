@@ -41,22 +41,21 @@
         <!-- Recipe cards -->
         <div class="recipes">
           <article class="card recipe">
-            <img src="" alt="Dish 1" loading="lazy" />
             <div class="meta">
+              <h3>Main</h3>
               <h4>Two Day Spaghetti Bolognaise</h4>
               <p>Thick, beautifully seasoned and rich sauce sat atop a mountain of pasta</p>
             </div>
           </article>
   
           <article class="card recipe">
-            <img src="@/assets/orzo.PNG" alt="Dish 2" loading="lazy" />
             <div class="meta">
+              <h3>Main</h3>
               <h4>Lemon Orzo</h4>
               <p></p>
             </div>
           </article>
           <article class="card recipe">
-            <img src="" alt="Dish 3" loading="lazy" />
             <div class="meta"> 
               <h3>Dessert</h3>
               <h4>Sticky Date Pudding</h4>

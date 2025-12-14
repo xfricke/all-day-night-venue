@@ -4,9 +4,6 @@
       <landingBanner />
     </section>
     <section class="section">
-      <IntroSection />
-    </section>
-    <section class="section">
     <div class="container row-tiles">
       <div class="tile"><MenuTab /></div>
       <div class="tile"><LocationTab /></div>
@@ -32,7 +29,6 @@
 import MenuTab from '@/components/MenuTab.vue'
 import landingBanner from '@/components/landingBanner.vue';
 import LocationTab from '@/components/LocationTab.vue';
-import IntroSection from '@/components/IntroSection.vue';
 import SevenSeedsSection from '@/components/SevenSeedsSection.vue'
 import UpcomingDJ from '@/components/UpcomingDJ.vue';
 import OutOfOffice from '@/components/OutOfOffice.vue';
