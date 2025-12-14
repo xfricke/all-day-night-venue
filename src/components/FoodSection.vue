@@ -49,7 +49,7 @@
           </article>
   
           <article class="card recipe">
-            <img src="@/assets/orzo.png" alt="Dish 2" loading="lazy" />
+            <img src="@/assets/orzo.PNG" alt="Dish 2" loading="lazy" />
             <div class="meta">
               <h4>Lemon Orzo</h4>
               <p></p>
