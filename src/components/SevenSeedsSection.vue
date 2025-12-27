@@ -34,18 +34,24 @@ const bgStyle = {
   </script>
   
   <style scoped>
-  .origin{
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-  }
-  
-  .origin-wrap {
-    text-align: center;
-    padding: 52px 400px;
-    border-radius: 16px;
-    color: bisque;
-  }
+ .origin {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  align-items: center;      /* vertical center */
+  justify-content: center;  /* horizontal center */
+  padding: 4rem 1.5rem;     /* mobile breathing room */
+}
+
+.origin-wrap {
+  max-width: 800px;
+  width: 100%;              /* allows shrink on mobile */
+  border-radius: 16px;
+  color: bisque;
+text-align: center;
+}
 
 
   
@@ -60,6 +66,7 @@ const bgStyle = {
   }
   
   .origin-copy{
+    max-width: 1200px;
     background-color: rgb(45, 43, 32);
     padding: 30px 20px;
     border-radius: 5px;

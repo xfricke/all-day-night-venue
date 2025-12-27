@@ -21,7 +21,7 @@
             />
           </figure>
           <div class="feature-copy">
-            <h3>What's in Store For You?</h3>
+            <h3 style="margin-top: 10px;">What's in Store For You?</h3>
             <p>
               Rotating dishes with soulful basics. think baked vegetables, braised proteins,
               and a bright, herb-forward finish. It's the type of stuff that truly makes you believe it was cooked with love and precision, the kind of plate that makes you want to make it yourself in your own abode.
@@ -51,15 +51,15 @@
           <article class="card recipe">
             <div class="meta">
               <h3>Main</h3>
-              <h4>Lemon Orzo</h4>
-              <p></p>
+              <h4>Lemon Chicken Orzo with blazed vegetables</h4>
+              <p>Lovely and citrusy orzo with a pan fried chicken cutlet to perfectly balance the flavours</p>
             </div>
           </article>
           <article class="card recipe">
             <div class="meta"> 
               <h3>Dessert</h3>
               <h4>Sticky Date Pudding</h4>
-              <p>Seductive, pleasing and moist... much like my ex piece. Hook into our delightful sticky date pudding to end the evening, at our venue at least...</p>
+              <p>Seductive, pleasing and moist... much like my ex piece. Hook into our delightful sticky date pudding to end the evening. Well... at our venue at least...</p>
             </div>
           </article>
         </div>
@@ -100,6 +100,8 @@
 
   /* Feature */
   .feature {
+    margin-inline: auto;    /* centers the whole grid */
+    max-width: 1200px;      /* hard limit */
     text-align: center;
     color: bisque;
     display: grid;
@@ -126,16 +128,24 @@
   border: 1px solid rgba(255,255,255,0.08);
   box-shadow: 0 8px 20px rgba(0,0,0,0.25);
 }
+
+.feature-copy{
+  border-top: 1px solid rgba(255,255,255,0.08);
+  border-bottom: 1px solid rgba(255,255,255,0.08);  
+}
+
   .feature-copy h3 {
     margin: 0 0 6px;
     font-size: clamp(20px, 3vw, 28px);
   }
-  .feature-copy p { margin: 0 0 10px; opacity: .9; }
+  .feature-copy p { 
+    margin: 0 0 10px; opacity: .9;
+  text-align: left; }
   .bullets {
     padding-left: 18px;
     margin: 0 0 12px;
     opacity: .9;
-    list-style: none;
+    text-align: left;
   }
   
   /* Recipes grid */

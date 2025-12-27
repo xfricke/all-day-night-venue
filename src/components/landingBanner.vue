@@ -15,7 +15,7 @@
   width: 100%;
   height: 70vh; 
   overflow: hidden;
-  color: aliceblue;
+  color: bisque;
 }
 
 .banner-image {

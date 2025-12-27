@@ -9,7 +9,7 @@
   
         <!-- Copy -->
         <div class="collab-copy">
-          <p class="eyebrow">Evenings</p>
+          <p class="eyebrow" style="margin-top: 10px;">Evenings</p>
           <h2>In collaboration with <span class="brand">OutOfOffice</span> Dance Club</h2>
           <p class="lede">
             By day, lounge and relax with a warm or iced cup of coffee . By night, entrench yourself into some carefully curated rhythms and warm lights.
@@ -128,7 +128,9 @@
 .collab-copy {
   text-align: center;            
   margin-inline: auto;           
-  max-width: 62ch;     
+  max-width: 62ch; 
+  border-top: 1px solid rgba(255,255,255,0.08);
+  border-bottom: 1px solid rgba(255,255,255,0.08);  
 }
 
 .collab-media {
@@ -150,7 +152,7 @@
 }
 
 .highlights{
-    list-style: none;
+   
 }
 
 
@@ -194,11 +196,12 @@
   }
   .brand{ color: var(--accent); }
 
-  .lede{ opacity:.92; margin:0 0 14px; max-width: 60ch; }
+  .lede{ opacity:.92; margin:0 0 14px; max-width: 60ch; text-align: left; }
   
   .highlights{
     margin: 0 0 14px; padding-left: 18px;
     opacity: .92;
+    text-align: left;
   }
   
   .highlights li{ margin: 6px 0; }

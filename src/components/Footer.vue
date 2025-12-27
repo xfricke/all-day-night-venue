@@ -5,7 +5,7 @@
         <p class="design-credit">Designed by Felix Dundon</p>
   
         <p class="footer-item">
-          124 Wellington Parade, East Melbourne VIC 3002
+          St Kilda Rd
         </p>
   
         <p class="design-credit">Make a booking!</p>

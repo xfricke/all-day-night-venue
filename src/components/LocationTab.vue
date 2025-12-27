@@ -22,7 +22,7 @@ onBeforeUnmount(()=> window.removeEventListener('keydown', onKey))
     <!-- Custom cursor text -->
     <teleport to="body">
       <Cursor class="app-cursor">
-        <span v-if="isHovering && !isOpen" class="cursor-caption">View Locations</span>
+        <span v-if="isHovering && !isOpen" class="cursor-caption">View Location</span>
         <span v-else-if="isHovering && isOpen" class="cursor-caption">Close</span>
       </Cursor>
     </teleport>

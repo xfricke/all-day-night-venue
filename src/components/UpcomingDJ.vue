@@ -11,7 +11,6 @@
           <h3 class="dj-name">{{ name }}</h3>
           <p class="dj-meta">{{ meta }}</p>
           <p class="dj-desc">{{ desc }}</p>
-          <p class="dj-socials">{{ socials }}</p>
         </div>
       </div>
   
