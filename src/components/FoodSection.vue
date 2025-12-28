@@ -110,6 +110,7 @@
     padding: 16px;
     border-radius: 16px;
     margin-top: 18px;
+    align-items: center;
   }
 
   .feature-media {

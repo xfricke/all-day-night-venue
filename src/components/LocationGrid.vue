@@ -1,12 +1,11 @@
 <script setup lang="ts">
 
-import stkilda from '@/assets/stkildard.jpg'
 
-type Location = { name: string; desc?: string; img?: string; }
+
+type Location = { name: string; desc?: string; }
 const locations: Location[] = [
   { name: "St Kilda Road",
-    desc: "Excellent proximity to the city. Lush and leafy road with a successful corporate setting. Great feel of community, peaceful vibes and friendly faces.",
-    img: stkilda
+    desc: "Excellent proximity to the city. Lush and leafy road with a successful corporate setting. Great feel of community, peaceful vibes and friendly faces."
   },
 ]
 </script>
@@ -18,9 +17,6 @@ const locations: Location[] = [
       <div class="meta">
         <h3>{{ l.name }}</h3>
         <p>{{ l.desc }}</p>
-        <div class="location-photo">
-          <img :src="stkilda" />
-        </div>
       </div>
     </article>
   </div>

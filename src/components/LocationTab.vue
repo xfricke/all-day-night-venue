@@ -9,6 +9,19 @@ const isOpen = ref(false)
 const setIsHovering = (v: boolean) => (isHovering.value = v)
 const toggle = () => (isOpen.value = !isOpen.value)
 
+const panelVariants = {
+  open: {
+    height: 'auto',
+    opacity: 1,
+    transition: { duration: 0.35, ease: 'easeOut' }
+  },
+  closed: {
+    height: 0,
+    opacity: 0,
+    transition: { duration: 0.25, ease: 'easeIn' }
+  }
+}
+
 // Close on Escape
 function onKey(e: KeyboardEvent){
   if(e.key === 'Escape' && isOpen.value) isOpen.value = false
@@ -42,20 +55,15 @@ onBeforeUnmount(()=> window.removeEventListener('keydown', onKey))
 
     <!-- Animated panel -->
     <motion.div
-        class="panel card"
+        class="panel-shell"
         :initial="false"
-        :animate="isOpen
-          ? { opacity: 1, y: 0, scaleY: 1, transition: { duration: 0.35 } }
-          : { opacity: 0, y: -8, scaleY: 0.96, transition: { duration: 0.25 } }
-        "
-        :style="{
-          transformOrigin: 'top',
-          overflow: 'hidden',
-          pointerEvents: isOpen ? 'auto' : 'none'
-        }"
+        :animate="isOpen ? 'open' : 'closed'"
+        :variants="panelVariants"
       >
-      <LocationGrid />
-    </motion.div>
+        <div class="panel card">
+          <LocationGrid /> 
+        </div>
+      </motion.div>
   </div>
 </template>
 
@@ -109,6 +117,14 @@ onBeforeUnmount(()=> window.removeEventListener('keydown', onKey))
 .tab-chevron { transition: transform .25s ease; }
 .tab-chevron.open { transform: rotate(180deg); }
 
-/* Panel */
-.panel { margin-top: 12px; padding: 16px; border-radius: 16px; }
+.panel-shell {
+  overflow: hidden;      /* critical: clips content while closing */
+  height: 0;             /* closed state truly occupies no space */
+}
+
+.panel {
+  margin-top: 12px;      /* applies only to inner content */
+  padding: 16px;
+  border-radius: 16px;
+}
 </style>
