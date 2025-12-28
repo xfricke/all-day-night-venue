@@ -1,5 +1,6 @@
 <template>
     <section class="section collab">
+      <p class="eyebrow" style="margin-top: 50px; color: bisque; text-align: center;">Evenings</p>
       <div class="container collab-grid card">
         <!-- Brand / Visual -->
         <div class="collab-media" v-if="banner">
@@ -9,7 +10,6 @@
   
         <!-- Copy -->
         <div class="collab-copy">
-          <p class="eyebrow" style="margin-top: 10px;">Evenings</p>
           <h2>In collaboration with <span class="brand">OutOfOffice</span> Dance Club</h2>
           <p class="lede">
             By day, lounge and relax with a warm or iced cup of coffee . By night, entrench yourself into some carefully curated rhythms and warm lights.
@@ -111,7 +111,7 @@
 
  /* The card container */
  .collab-grid {
-  margin-top: 50px;  
+  margin-top: 30px;  
   max-width: 1200px;      /* hard limit */
   margin-inline: auto;    /* centers the whole grid */
   width: 100%;

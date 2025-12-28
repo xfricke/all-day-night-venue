@@ -131,7 +131,8 @@
 
 .feature-copy{
   border-top: 1px solid rgba(255,255,255,0.08);
-  border-bottom: 1px solid rgba(255,255,255,0.08);  
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  padding: 12px;  
 }
 
   .feature-copy h3 {

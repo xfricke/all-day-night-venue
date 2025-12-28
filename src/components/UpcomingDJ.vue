@@ -1,24 +1,49 @@
 <template>
+  <p class="eyebrow" style="margin-top: 50px;">Lineup</p>
+    <!-- Header -->
+    <header class="DJ-header">
+          <h2>Take a look at our upcoming DJs</h2>
+          <p class="lede">
+            An expansive rotation of your favourite DJs. These people will keep the night alive and the vibrations maximum
+          </p>
+        </header>
     <section class="section upcoming">
-      <div class="container card dj-wrap">
-        <!-- Profile image -->
-        <figure class="dj-photo">
-            <img :src="hasthiPhoto" /> :alt="`Profile photo of ${name}`" loading="lazy" />
-        </figure>
-  
-        
-        <div class="dj-copy">
-          <h3 class="dj-name">{{ name }}</h3>
-          <p class="dj-meta">{{ meta }}</p>
-          <p class="dj-desc">{{ desc }}</p>
+      
+      <div class="dj-grid">
+        <div
+          v-for="(dj, index) in props.djs"
+          :key="index"
+          class="container card dj-wrap"
+        >
+          <!-- Profile image -->
+          <figure class="dj-photo">
+            <img :src="dj.photo" :alt="`Profile photo of ${dj.name}`" loading="lazy" />
+          </figure>
+
+          <!-- Copy -->
+          <div class="dj-copy">
+            <h3 class="dj-name">{{ dj.name }}</h3>
+            <p class="dj-meta">{{ dj.meta }}</p>
+            <p class="dj-desc">{{ dj.desc }}</p>
+          </div>
         </div>
       </div>
+              
+    
+    
+      
   
       <!-- Marquee -->
       <div class="marquee" aria-label="Scrolling announcements">
         <div class="track">
-          <span v-for="i in 8" :key="i">
-            🎧 Upcoming DJ · {{ name }} · {{ meta }} · Enquire with us to play here! ·
+          <span v-for="(dj, index) in props.djs" :key="'a' + index">
+            🎧 Upcoming DJ · {{ dj.name }} · {{ dj.meta }} · Enquire with us to play here! ·
+          </span>
+        </div>
+
+        <div class="track">
+          <span v-for="(dj, index) in props.djs" :key="'b' + index">
+            🎧 Upcoming DJ · {{ dj.name }} · {{ dj.meta }} · Enquire with us to play here! ·
           </span>
         </div>
       </div>
@@ -28,36 +53,88 @@
   <script setup lang="ts">
 
     import hasthiPhoto from '@/assets/oew6 17.6.jpg'
+    import maxyPhoto from '@/assets/maxy.jpg'
 
-
-  interface Props {
-    name?: string
-    meta?: string     
-    desc?: string
-    photo?: string
-  }
-  const props = withDefaults(defineProps<Props>(), {
-    name: 'Hasthika',
-    meta: 'Saturday · 9:00 PM · Vinyl Only',
-    desc:
-      'Smooth and lustful R&B played by yours truly, Hasthika. ',
-    photo: hasthiPhoto,
-  })
+    interface DJ {
+  name: string
+  meta: string
+  desc: string
+  photo: string
+}
+const props = withDefaults(defineProps<{ djs?: DJ[] }>(), {
+  djs: () => [
+    {
+      name: 'Hasthika',
+      meta: 'Saturday · 9:00 PM · Vinyl Only',
+      desc: 'Smooth and lustful R&B played by yours truly, Hasthika.',
+      photo: hasthiPhoto,
+    },
+    {
+      name: 'Maxy',
+      meta: 'Friday · 8:00 PM · Deep House',
+      desc: 'Warm grooves and late-night rhythms to set the tone. ',
+      photo: maxyPhoto, 
+    }
+  ]
+})
   
-  const { name, meta, desc, photo } = props
   </script>
   
   <style scoped>
-  .upcoming { padding-top: 48px; }
   
   /* Card layout */
-  .dj-wrap {
-    display: grid;
-    grid-template-columns: 160px 1fr;
-    gap: 20px;
-    align-items: center;
-    padding: 18px;
-    border-radius: 16px;
+  /* Parent layout */
+.dj-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  justify-content: center;
+}
+
+/* Card */
+.dj-wrap {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 20px;
+  align-items: center;
+  padding: 18px;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 520px; /* controls size */
+  margin: 0 auto;
+}
+
+/* Responsive stacking */
+@media (max-width: 900px) {
+  .dj-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+  .DJ-header {
+    color: bisque;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .food-header h2 {
+    margin: 0 0 8px;
+    font-size: clamp(28px, 4vw, 42px);
+  }
+  .lede {
+    margin: 0;
+    opacity: 0.9;
+    max-width: 65ch;
+    margin-inline: auto;
+  }
+  
+  .eyebrow {
+    text-align: center;
+    text-transform: uppercase;
+    opacity: 0.7;
+    letter-spacing: 2px;
+    margin: 0 0 8px;
+    font-size: 0.85rem;
+    color: bisque;
   }
   
   /* profile photo */
@@ -99,37 +176,43 @@
     color: bisque;
   }
   
-  /* scroll */
   .marquee {
-    margin-top: 16px;
-    border-top: 1px solid rgba(255,255,255,0.08);
-    border-bottom: 1px solid rgba(255,255,255,0.08);
-    overflow: hidden;
-    mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
-    -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
-    color: bisque;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+  color: bisque;
+}
+
+.track {
+  display: flex;
+  white-space: nowrap;
+  animation: marquee 38s linear infinite;
+  padding: 10px 0;
+}
+
+.track span {
+  display: inline-block;
+  padding-right: 28px;
+  letter-spacing: .5px;
+  color: var(--cream);
+  opacity: .9;
+  text-transform: uppercase;
+  font-size: 0.95rem;
+}
+
+/* Keyframes */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
   }
-  .track {
-    display: inline-block;
-    white-space: nowrap;
-    will-change: transform;
-    padding: 10px 0;
-    animation: marquee 18s linear infinite;
+  to {
+    transform: translateX(-100%);
   }
-  .track span {
-    display: inline-block;
-    padding-right: 28px;
-    letter-spacing: .5px;
-    color: var(--cream);
-    opacity: .9;
-    text-transform: uppercase;
-    font-size: 0.95rem;
-  }
-  
-  @keyframes marquee {
-    from { transform: translateX(0); }
-    to   { transform: translateX(-50%); } /* repeats since we dup content via v-for */
-  }
+}
   
   /* Responsive */
   @media (max-width: 900px) {

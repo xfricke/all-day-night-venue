@@ -1,5 +1,5 @@
 <template>
-    <section class="section origin" :style="bgStyle" style="margin-top: 100px; margin-bottom: 20px;">
+    <section class="section origin" :style="bgStyle" style="margin-bottom: 20px;">
       <div class="container origin-wrap card">
         <!-- Text below -->
         <div class="origin-copy">
@@ -15,9 +15,7 @@
             you're sipping on some of Melbourne's finest.
           </p>
 
-          <div class="seedsLogo">
-            <img src="@/assets/sevenseeds.png"></img>
-        </div>
+        
 
         </div>
     
@@ -38,7 +36,7 @@ const bgStyle = {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-
+  height: 60vh;
   display: flex;
   align-items: center;      /* vertical center */
   justify-content: center;  /* horizontal center */
@@ -67,7 +65,8 @@ text-align: center;
   
   .origin-copy{
     max-width: 1200px;
-    background-color: rgb(45, 43, 32);
+    background-color: rgba(45, 43, 32, 0.271);
+    backdrop-filter: blur(5px);
     padding: 30px 20px;
     border-radius: 5px;
     border-style: solid;

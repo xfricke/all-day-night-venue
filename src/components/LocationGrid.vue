@@ -38,6 +38,7 @@ const locations: Location[] = [
   display: flex;
   align-items: center;      /* vertical center */
   justify-content: center;
+  padding: 10px;
 }
 
 .location-photo img{
